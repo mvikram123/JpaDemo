@@ -16,10 +16,14 @@ public class UserController {
         return userService.addUser(user);
 
     }
-    @GetMapping("/get_user")
+    @GetMapping("/get_users")
+    public List<User> getUsers(@RequestParam("id") int id)
+    {
+       return  userService.getUsers();
+    }
     public User getUser(@RequestParam("id") int id)
     {
-       return  userService.getUser(id);
+        return userService.getUser(id);
     }
 
 }
