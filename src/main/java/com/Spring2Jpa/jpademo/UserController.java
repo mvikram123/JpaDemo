@@ -17,11 +17,13 @@ public class UserController {
 
     }
     @GetMapping("/get_users")
-    public List<User> getUsers(@RequestParam("id") int id)
+    public List<User> getUsers()//print list of  users
     {
        return  userService.getUsers();
     }
-    public User getUser(@RequestParam("id") int id)
+
+    @GetMapping("/get_user")
+    public User getUser(@RequestParam("id") int id) // user can search by particular id
     {
         return userService.getUser(id);
     }
